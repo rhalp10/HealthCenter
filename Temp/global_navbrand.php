@@ -1,0 +1,1 @@
+<img src = "images/logo.png" height = "55px" style = "float:left;"><label class = "navbar-brand">Health Center Patient Management System</label>

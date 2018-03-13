@@ -1,5 +1,6 @@
 <?php
 session_start(); // Starting Session
+require_once('dbconfig.php');
 $error=''; // Variable To Store Error Message
 if (isset($_POST['submit'])) {
 		if (empty($_POST['username']) || empty($_POST['password'])) 
@@ -11,8 +12,7 @@ if (isset($_POST['submit'])) {
 			}
 		else
 		{
-			// Establishing Connection with Server by passing server_name, user_id and password as a parameter
-			require_once('dbconfig.php');
+
 			// Define $username and $password
 			$username=$_POST['username'];
 			$password=$_POST['password'];
@@ -20,30 +20,46 @@ if (isset($_POST['submit'])) {
 			// To protect MySQL injection for Security purpose
 			$username = stripslashes($username);
 			$password = stripslashes($password);
-			$username = mysqli_real_escape_string($connection,$username);
-			$password = mysqli_real_escape_string($connection,$password);
+			$username = mysqli_real_escape_string($conn,$username);
+			$password = mysqli_real_escape_string($conn,$password);
 			
-
-			
-			// Selecting Database
 			// SQL query to fetch information of registerd users and finds user match.
-			$query = mysqli_query( $connection,"SELECT count(user_ID) rowCount FROM user_account WHERE password = '$password' AND username='$username'");
-			$rows = mysqli_fetch_assoc($query);
+			$query = mysqli_query($conn,"SELECT * FROM user_account WHERE password = '$password' AND username='$username'");
+			$rows = mysqli_fetch_array($query);
 
+			
 
-				if ($rows[0] = 1) //checking if acclevel is equal to 0
-                {   
-                    
+				if ($rows['level_ID'] == '1') 
+				{	
+
 					$_SESSION['login_user']=$username; // Initializing Session
-					header("location: dashboard.php"); // retain to user dashboard
-                }
+					header("location: admin/index.php"); //admin Level
+				} 
+				elseif ($rows['level_ID'] == '2') 
+				{
+					$_SESSION['login_user']=$username; // Initializing Session
+					header("location: admin/index.php"); // student Level
+					
+				} 
+				elseif ($rows['level_ID'] == '3') 
+				{
+					$_SESSION['login_user']=$username; // Initializing Session
+					header("location: admin/index.php"); // teacher level
+
+				} 
+				elseif ($rows['level_ID'] == '4') 
+				{
+					$_SESSION['login_user']=$username; // Initializing Session
+					header("location: admin/index.php"); // teacher level
+
+				} 
 				else 
 				{
 					echo "<script>alert('Access Denied!	');
 										window.location='index.php';
 									</script>";
 				}
-			mysqli_close($connection); // Closing Connection
+			mysqli_close($conn); // Closing Connection
 		}
 }
 ?>

@@ -31,7 +31,7 @@ if(isset($_SESSION['login_user']))
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
@@ -54,14 +54,21 @@ if(isset($_SESSION['login_user']))
     <link href="admin/build/css/custom.min.css" rel="stylesheet">
   </head>
 
-  <body class="login">
+  <body class="login" style="
+
+   background: url('asdasd') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; ">
+    <H1 class="text-center" style="text-shadow: 2px 2px 4px #000000; color: white;">JAVALERA BARANGAY HEALTH CENTER <BR>INFORMATION SYSTEM</H1>
     <div>
       <a class="hiddenanchor" id="signup"></a>
       <a class="hiddenanchor" id="signin"></a>
 
-      <div class="login_wrapper">
+      <div class="login_wrapper" >
         <div class="animate form login_form">
-          <section class="login_content">
+          <section class="login_content" style="background-color: white !important; padding: 20px;box-shadow: 5px 10px 4px #888888; border: solid 1px;">
             <form class="modal-body" role="form" method="post" id="login-form">
               <h1>Login Form</h1>
               <div>

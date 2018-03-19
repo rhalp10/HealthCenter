@@ -10,20 +10,20 @@ if (isset($_REQUEST['id'])) {
      <div class="form-group">
        <label class="col-sm-3 control-label">Name</label>
        <div class="col-sm-9">
-         <input type="text" class="form-control" id="title" name="Name" value="<?php echo $d['1']?>">
+         <input type="text" class="form-control"  name="Name" value="<?php echo $d['1']?>">
        </div>
      </div>
       <div class="form-group">
        <label class="col-sm-3 control-label">Current Password</label>
        <div class="col-sm-9">
-         <input type="password" class="form-control" id="title" name="Current Password" value="<?php echo $d['2']?>">
+         <input type="password" class="form-control"  name="Current Password" value="<?php echo $d['2']?>">
        </div>
      </div>
       
      <div class="form-group">
        <label class="col-sm-3 control-label">New Password</label>
        <div class="col-sm-9">
-         <input type="text" class="form-control" id="title" name="New Password" value="">
+         <input type="text" class="form-control"  name="New Password" value="">
        </div>
      </div>
     <div class="form-group">
@@ -53,7 +53,7 @@ if (isset($_REQUEST['id'])) {
        <label class=" control-label"></label>
        <div class="btn-group ">
          <button type="button" class="btn btn-danger antoclose" data-dismiss="modal">Close</button>
-         <input type="Submit" class="btn btn-success" id="title" name="edit_acc">
+         <input type="Submit" class="btn btn-success" id="" name="edit_acc">
        </div>
      </div>
    </form>

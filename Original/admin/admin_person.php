@@ -71,6 +71,7 @@
                           <table id="datatable" class="table table-striped table-bordered">
                             <thead>
                               <tr>
+                                <th>Patient Number</th>
                                 <th>Name</th>
                                 <th>Gender</th>
                                 <th>Action</th>
@@ -87,6 +88,7 @@ LEFT JOIN ref_gender rg ON pd.gender_ID = rg.gender_ID");
                 while ($person = mysqli_fetch_array($sql)) {
                                 ?>
                               <tr>
+                                <td><?php echo $person[0]?></td>
                                 <td>
                                   <ul class="list-inline">
                                   <li>

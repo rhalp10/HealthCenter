@@ -71,7 +71,8 @@
                           <table id="datatable" class="table table-striped table-bordered">
                             <thead>
                               <tr>
-                                <th class="col-sm-9">Name</th>
+                                <th>User Type</th>
+                                <th class="col-sm-9">Username</th>
                                 <th>Action</th>
                               </tr>
                             </thead>
@@ -79,10 +80,12 @@
 
                             <tbody>
               <?php 
-              $sql = mysqli_query($conn,"SELECT * FROM `user_account` ua LEFT JOIN user_detail ud ON ua.user_ID = ud.user_ID");
+              $sql = mysqli_query($conn,"SELECT * FROM `user_account` ua LEFT JOIN user_detail ud ON ua.user_ID = ud.user_ID
+INNER JOIN user_level ul ON ua.level_ID = ul.level_ID");
                 while ($acc = mysqli_fetch_array($sql)) {
                                 ?>
                               <tr>
+                                <td><?php echo $acc[17]?></td>
                                 <td>
                                 <ul class="list-inline">
                                   <li>
@@ -140,7 +143,7 @@
 
     <!-- calendar modal -->
     <div id="addnewacc" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="addnewacc" aria-hidden="true">
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-lg">
         <div class="modal-content">
 
           <div class="modal-header">
@@ -150,7 +153,9 @@
           <div class="modal-body">
             <div id="testmodal" style="padding: 5px 20px;">
               <form id="antoform" class="form-horizontal calender" role="form" method="POST" action="Action" enctype="multipart/form-data">
-               <div class="form-group">
+             
+                <div class="col-sm-6">
+                    <div class="form-group">
                   <label class="col-sm-3 control-label">Account Picture</label>
                   <div class="col-sm-9">
                     <input type="file" name="imagex"  class="form-control inputFile" />
@@ -159,31 +164,37 @@
                 <div class="form-group">
                   <label class="col-sm-3 control-label">First Name</label>
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" id="title" name="fName">
+                    <input type="text" class="form-control" id="fName" name="fName">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-3 control-label">Middle Name</label>
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" id="title" name="mName">
+                    <input type="text" class="form-control" id="mName" name="mName">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-3 control-label">Last Name</label>
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" id="title" name="lName">
+                    <input type="text" class="form-control" id="lName" name="lName">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-3 control-label">Birthday</label>
                   <div class="col-sm-9">
-                    <input type="date" class="form-control" id="title" name="bday">
+                    <input type="date" class="form-control" id="bday" name="bday">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-sm-3 control-label">Address</label>
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" id="title" name="address">
+                    <input type="text" class="form-control" id="address" name="address">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">Contact</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" id="Contact" name="Contact">
                   </div>
                 </div>
                 <div class="form-group">
@@ -205,26 +216,28 @@
                 <div class="form-group">
                   <label class="col-sm-3 control-label">Email</label>
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" id="title" name="Email">
+                    <input type="text" class="form-control" id="Email" name="Email">
                   </div>
                 </div>
-                <div class="form-group">
+                </div>
+                <div class="col-xs-6">
+                  <div class="form-group">
                   <label class="col-sm-3 control-label">Username</label>
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" id="title" name="username">
+                    <input type="text" class="form-control" id="username" name="username">
                   </div>
                 </div>
                 <div class="form-group">
                  <label class="col-sm-3 control-label"> Password</label>
                  <div class="col-sm-9">
-                   <input type="password" class="form-control" id="title" name="Password" >
+                   <input type="password" class="form-control" id="Password" name="Password" >
                  </div>
                </div>
                 
                <div class="form-group">
                  <label class="col-sm-3 control-label">Retype Password</label>
                  <div class="col-sm-9">
-                   <input type="text" class="form-control" id="title" name="rePassword" value="">
+                   <input type="text" class="form-control" id="rePassword" name="rePassword" value="">
                  </div>
                </div>
                <div class="form-group">
@@ -243,11 +256,12 @@
                    </select>
                  </div>
                </div>
+                </div>
                <div class="form-group text-center">
                  <label class=" control-label"></label>
                  <div class="btn-group ">
                    <button type="button" class="btn btn-danger antoclose" data-dismiss="modal">Close</button>
-                   <input type="Submit" class="btn btn-success" id="title" name="submit_acc">
+                   <input type="Submit" class="btn btn-success" id="" name="submit_acc">
                  </div>
                </div>
              </form>

@@ -91,17 +91,24 @@ if (isset($_REQUEST['id'])) {
                         </div>
                       </div>
                       
+                         
 
                       <div class="" role="tabpanel" data-example-id="togglable-tabs">
                         <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
-                          <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Health Record</a>
+                          <li role="presentation" class="active"><a href="#tab_content1" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Profile</a>
                           </li>
-                          <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Profile</a>
+                          <li role="presentation" class=""><a href="#tab_content2" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Health Record</a>
                           </li>
+                          
 
                         </ul>
                         <div id="myTabContent" class="tab-content">
-                          <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
+                           <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="profile-tab">
+
+                            <p>asdasd</p>
+
+                          </div>
+                          <div role="tabpanel" class="tab-pane fade " id="tab_content2" aria-labelledby="home-tab">
 
 <div class="x_content">
 
@@ -109,13 +116,19 @@ if (isset($_REQUEST['id'])) {
     <!-- required for floating -->
     <!-- Nav tabs -->
     <ul class="nav nav-tabs tabs-left  ">
-      <li class=""><a href="#home" data-toggle="tab" aria-expanded="false">Medicine Release</a>
+      <li class=""><a href="#home" data-toggle="tab" aria-expanded="false">Sickness</a>
       </li>
-      <li class=""><a href="#profile" data-toggle="tab" aria-expanded="false">Vacine Record</a>
+      <li class=""><a href="#profile" data-toggle="tab" aria-expanded="false">Findings/Diagnose</a>
       </li>
-      <li class=""><a href="#messages" data-toggle="tab" aria-expanded="false">Bload Pressure</a>
+      <li class=""><a href="#messages" data-toggle="tab" aria-expanded="false">Allergies</a>
       </li>
-      <li class="active"><a href="#settings" data-toggle="tab" aria-expanded="true">Height and Width</a>
+      <li class=""><a href="#messages" data-toggle="tab" aria-expanded="false">Vaccines</a>
+      </li>
+      <li class=""><a href="#messages" data-toggle="tab" aria-expanded="false">Immunization</a>
+      </li>
+      <li class=""><a href="#messages" data-toggle="tab" aria-expanded="false">Prescription</a>
+      </li>
+      <li class="active"><a href="#settings" data-toggle="tab" aria-expanded="true">Blood Pressure</a>
       </li>
     </ul>
   </div>
@@ -170,11 +183,6 @@ if (isset($_REQUEST['id'])) {
   <div class="clearfix"></div>
 
 </div>
-
-                          </div>
-                          <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
-
-                            <p>asdasd</p>
 
                           </div>
                           <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">

@@ -121,6 +121,7 @@ if (isset($_POST['submit_acc'])) {
 	$lName = $_POST['lName'];
 	$bday = $_POST['bday'];
 	$address = $_POST['address'];
+	$Contact = $_POST['Contact'];
 	$gender = $_POST['gender'];
 	$Email = $_POST['Email'];
 	$username = $_POST['username'];
@@ -144,7 +145,7 @@ if (isset($_POST['submit_acc'])) {
 			{
 				 $sql = mysqli_query($conn,"INSERT INTO `user_account` (`user_ID`, `username`, `password`, `user_created`, `level_ID`) VALUES (NULL, '$username', '$Password', CURRENT_TIMESTAMP, '$userlevel')");
 				 $last_id = mysqli_insert_id($conn);
-				 mysqli_query($conn,"INSERT INTO `user_detail` (`detail_ID`, `user_ID`, `detail_img`, `detail_Fname`, `detail_Mname`, `detail_Lname`, `gender_ID`, `detail_email`, `detail_address`, `detail_dob`) VALUES (NULL, '$last_id', '$imagedata', '$fName', '$mName', '$lName', '$gender', '$Email', '$address', '$bday')");
+				 mysqli_query($conn,"INSERT INTO `user_detail` (`detail_ID`, `user_ID`, `detail_img`, `detail_Fname`, `detail_Mname`, `detail_Lname`, `gender_ID`, `detail_email`, `detail_address`, `detail_dob`,`detail_Contact`) VALUES (NULL, '$last_id', '$imagedata', '$fName', '$mName', '$lName', '$gender', '$Email', '$address', '$bday','$Contact')");
 				 mysqli_close($conn);
 				 echo "<script>alert('Successfully Add New Account!');
 												window.location='admin_account.php';
